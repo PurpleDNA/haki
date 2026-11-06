@@ -1,0 +1,135 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+@font-face{font-family:Outfit;src:url(fonts/Outfit-Variable.ttf);font-weight:100 900}
+*{box-sizing:border-box}body{margin:0;background:#f8ffe1;font-family:Outfit,system-ui;color:#053233}
+.page{width:1440px;padding:64px;display:grid;gap:24px;grid-template-columns:repeat(12,1fr)}
+.card{border-radius:24px;padding:40px;position:relative;overflow:hidden}
+.k{font-size:13px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;opacity:.7;margin:0 0 20px}
+h1{font-size:44px;line-height:1.1;font-weight:600;margin:0 0 16px;letter-spacing:-.02em}
+p{font-size:17px;line-height:1.55;margin:0;max-width:52ch}
+.hero{grid-column:span 12;background:#053233;color:#f8ffe1;height:560px;display:flex;align-items:center;justify-content:center}
+.hero .tag{position:absolute;left:40px;bottom:36px;font-size:15px;opacity:.75}
+.story{grid-column:span 7;background:#ffffff}
+.mark{grid-column:span 5;background:#e2f4a2;display:flex;align-items:center;justify-content:center}
+.lock{grid-column:span 6;display:flex;align-items:center;justify-content:center;height:260px}
+.icons{grid-column:span 6;background:#e9efff;display:flex;gap:32px;align-items:flex-end;justify-content:center;height:260px}
+.icons figure{margin:0;text-align:center;font-size:13px;color:#7789b7}
+.colors{grid-column:span 12;display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:12px;padding:0}
+.sw{border-radius:20px;height:200px;padding:24px;display:flex;flex-direction:column;gap:4px}
+.sw b{font-size:20px;font-weight:600}.sw span{font-size:14px;opacity:.8}.sw em{margin-top:auto;font-style:normal;font-size:13px;opacity:.75}
+.type{grid-column:span 7;background:#ffffff}
+.type .big{font-size:96px;font-weight:600;letter-spacing:-.03em;line-height:1}
+.type .row{display:flex;gap:32px;margin-top:24px;font-size:18px}
+.app{grid-column:span 5;background:#053233;color:#f8ffe1;padding:0}
+.bar{display:flex;align-items:center;justify-content:space-between;padding:20px 28px;border-bottom:1px solid #ffffff1a}
+.kpis{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:24px 28px}
+.kpi{background:#ffffff0f;border-radius:16px;padding:18px}.kpi small{opacity:.7;font-size:13px}.kpi div{font-size:26px;font-weight:600;margin-top:6px}
+.kpi.hl{background:#e2f4a2;color:#053233}
+.pill{background:#e2f4a2;color:#053233;border-radius:99px;padding:8px 16px;font-weight:600;font-size:14px}
+.dont{grid-column:span 12;background:#ffffff;display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.dont div{text-align:center;font-size:14px}.dont .t{height:120px;border-radius:16px;display:flex;align-items:center;justify-content:center;margin-bottom:10px}
+</style></head><body><div class="page">
+<section class="card hero"><svg xmlns="http://www.w3.org/2000/svg" viewBox="-126.81 6.01 336.40 115.68" height="150" ><g transform="translate(-114.55 16.70) scale(0.7859)"><g fill="#e2f4a2">
+  <rect x="12" y="14" width="96" height="26" rx="13"/>
+  <g stroke="#e2f4a2" stroke-width="10" stroke-linecap="round" fill="none">
+    <path d="M57 82 L30 50"/><path d="M57 74 L48 50"/><path d="M63 74 L72 50"/><path d="M63 82 L90 50"/>
+  </g>
+  <path d="M45 72 H75 C75 86 81 97 88 106 H32 C39 97 45 86 45 72 Z" stroke="#e2f4a2" stroke-width="4" stroke-linejoin="round"/>
+</g></g><path d="M51.40 100L38.30 100L38.30 72.30Q38.30 68 35.60 65.30Q32.90 62.60 28.60 62.60Q25.80 62.60 23.60 63.80Q21.40 65 20.15 67.20Q18.90 69.40 18.90 72.30L13.80 69.70Q13.80 64 16.20 59.75Q18.60 55.50 22.85 53.10Q27.10 50.70 32.60 50.70Q38.10 50.70 42.35 53.10Q46.60 55.50 49 59.70Q51.40 63.90 51.40 69.40L51.40 100M18.90 100L5.80 100L5.80 27.70L18.90 27.70L18.90 100M80.20 101Q73.60 101 68.30 97.70Q63 94.40 60 88.70Q57 83 57 75.90Q57 68.70 60 63Q63 57.30 68.30 54Q73.60 50.70 80.20 50.70Q85.40 50.70 89.50 52.80Q93.60 54.90 96.05 58.65Q98.50 62.40 98.70 67.10L98.70 84.50Q98.50 89.30 96.05 93Q93.60 96.70 89.50 98.85Q85.40 101 80.20 101M82.60 88.90Q88.10 88.90 91.50 85.25Q94.90 81.60 94.90 75.80Q94.90 72 93.35 69.05Q91.80 66.10 89.05 64.45Q86.30 62.80 82.60 62.80Q79 62.80 76.25 64.45Q73.50 66.10 71.95 69.05Q70.40 72 70.40 75.80Q70.40 79.70 71.95 82.65Q73.50 85.60 76.25 87.25Q79 88.90 82.60 88.90M107.20 100L94.20 100L94.20 87L96.30 75.20L94.20 63.60L94.20 51.70L107.20 51.70L107.20 100M163.60 100L147.60 100L128.90 75.10L147.50 51.70L162.60 51.70L140.80 78.10L141.30 71.70L163.60 100M129.90 100L116.80 100L116.80 27.70L129.90 27.70L129.90 100M180.70 100L167.60 100L167.60 51.70L180.70 51.70" fill="#f8ffe1"/><rect x="160.40" y="29.49" width="27.51" height="15.72" rx="7.86" fill="#f8ffe1"/></svg><div class="tag">haki · Swahili for <i>just</i> · Murabaha asset financing</div></section>
+<section class="card story"><p class="k">The idea</p><h1>Justice happens in the open, under the baobab.</h1>
+<p>Across Africa, communities settled disputes under a great canopy tree, in full view, together. Haki's mark is that tree. The <b>flat crown</b> is shelter and a level judgement. The <b>branches</b> hold it up for everyone beneath. The <b>broad trunk</b> is steadiness: a fair price, fixed and agreed, that never grows behind your back.</p>
+<p style="margin-top:16px">The crown returns as the dot of the <b>i</b> in the wordmark, so the name and the tree read as one.</p></section>
+<section class="card mark"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="300" height="300"><g fill="#053233">
+  <rect x="12" y="14" width="96" height="26" rx="13"/>
+  <g stroke="#053233" stroke-width="10" stroke-linecap="round" fill="none">
+    <path d="M57 82 L30 50"/><path d="M57 74 L48 50"/><path d="M63 74 L72 50"/><path d="M63 82 L90 50"/>
+  </g>
+  <path d="M45 72 H75 C75 86 81 97 88 106 H32 C39 97 45 86 45 72 Z" stroke="#053233" stroke-width="4" stroke-linejoin="round"/>
+</g></svg></section>
+<section class="card lock" style="background:#ffffff"><svg xmlns="http://www.w3.org/2000/svg" viewBox="-126.81 6.01 336.40 115.68" height="92" ><g transform="translate(-114.55 16.70) scale(0.7859)"><g fill="#053233">
+  <rect x="12" y="14" width="96" height="26" rx="13"/>
+  <g stroke="#053233" stroke-width="10" stroke-linecap="round" fill="none">
+    <path d="M57 82 L30 50"/><path d="M57 74 L48 50"/><path d="M63 74 L72 50"/><path d="M63 82 L90 50"/>
+  </g>
+  <path d="M45 72 H75 C75 86 81 97 88 106 H32 C39 97 45 86 45 72 Z" stroke="#053233" stroke-width="4" stroke-linejoin="round"/>
+</g></g><path d="M51.40 100L38.30 100L38.30 72.30Q38.30 68 35.60 65.30Q32.90 62.60 28.60 62.60Q25.80 62.60 23.60 63.80Q21.40 65 20.15 67.20Q18.90 69.40 18.90 72.30L13.80 69.70Q13.80 64 16.20 59.75Q18.60 55.50 22.85 53.10Q27.10 50.70 32.60 50.70Q38.10 50.70 42.35 53.10Q46.60 55.50 49 59.70Q51.40 63.90 51.40 69.40L51.40 100M18.90 100L5.80 100L5.80 27.70L18.90 27.70L18.90 100M80.20 101Q73.60 101 68.30 97.70Q63 94.40 60 88.70Q57 83 57 75.90Q57 68.70 60 63Q63 57.30 68.30 54Q73.60 50.70 80.20 50.70Q85.40 50.70 89.50 52.80Q93.60 54.90 96.05 58.65Q98.50 62.40 98.70 67.10L98.70 84.50Q98.50 89.30 96.05 93Q93.60 96.70 89.50 98.85Q85.40 101 80.20 101M82.60 88.90Q88.10 88.90 91.50 85.25Q94.90 81.60 94.90 75.80Q94.90 72 93.35 69.05Q91.80 66.10 89.05 64.45Q86.30 62.80 82.60 62.80Q79 62.80 76.25 64.45Q73.50 66.10 71.95 69.05Q70.40 72 70.40 75.80Q70.40 79.70 71.95 82.65Q73.50 85.60 76.25 87.25Q79 88.90 82.60 88.90M107.20 100L94.20 100L94.20 87L96.30 75.20L94.20 63.60L94.20 51.70L107.20 51.70L107.20 100M163.60 100L147.60 100L128.90 75.10L147.50 51.70L162.60 51.70L140.80 78.10L141.30 71.70L163.60 100M129.90 100L116.80 100L116.80 27.70L129.90 27.70L129.90 100M180.70 100L167.60 100L167.60 51.70L180.70 51.70" fill="#053233"/><rect x="160.40" y="29.49" width="27.51" height="15.72" rx="7.86" fill="#053233"/></svg></section>
+<section class="card icons">
+<figure><svg xmlns="http://www.w3.org/2000/svg" viewBox="-26 -26 172 172" width="132" height="132"><rect x="-26" y="-26" width="172" height="172" rx="40" fill="#053233"/><g fill="#e2f4a2">
+  <rect x="12" y="14" width="96" height="26" rx="13"/>
+  <g stroke="#e2f4a2" stroke-width="10" stroke-linecap="round" fill="none">
+    <path d="M57 82 L30 50"/><path d="M57 74 L48 50"/><path d="M63 74 L72 50"/><path d="M63 82 L90 50"/>
+  </g>
+  <path d="M45 72 H75 C75 86 81 97 88 106 H32 C39 97 45 86 45 72 Z" stroke="#e2f4a2" stroke-width="4" stroke-linejoin="round"/>
+</g></svg><figcaption>App icon</figcaption></figure>
+<figure><svg xmlns="http://www.w3.org/2000/svg" viewBox="-10 -10 140 140" width="64" height="64"><rect x="-10" y="-10" width="140" height="140" rx="30" fill="#053233"/><g fill="#e2f4a2">
+  <rect x="10" y="12" width="100" height="30" rx="15"/>
+  <g stroke="#e2f4a2" stroke-width="14" stroke-linecap="round" fill="none">
+    <path d="M54 78 L32 54"/><path d="M66 78 L88 54"/>
+  </g>
+  <path d="M44 72 H76 C76 86 82 97 90 108 H30 C38 97 44 86 44 72 Z" stroke="#e2f4a2" stroke-width="4" stroke-linejoin="round"/>
+</g></svg><figcaption>64 px</figcaption></figure>
+<figure><svg xmlns="http://www.w3.org/2000/svg" viewBox="-10 -10 140 140" width="32" height="32"><rect x="-10" y="-10" width="140" height="140" rx="30" fill="#053233"/><g fill="#e2f4a2">
+  <rect x="10" y="12" width="100" height="30" rx="15"/>
+  <g stroke="#e2f4a2" stroke-width="14" stroke-linecap="round" fill="none">
+    <path d="M54 78 L32 54"/><path d="M66 78 L88 54"/>
+  </g>
+  <path d="M44 72 H76 C76 86 82 97 90 108 H30 C38 97 44 86 44 72 Z" stroke="#e2f4a2" stroke-width="4" stroke-linejoin="round"/>
+</g></svg><figcaption>32 px</figcaption></figure>
+<figure><svg xmlns="http://www.w3.org/2000/svg" viewBox="-10 -10 140 140" width="16" height="16"><rect x="-10" y="-10" width="140" height="140" rx="30" fill="#053233"/><g fill="#e2f4a2">
+  <rect x="10" y="12" width="100" height="30" rx="15"/>
+  <g stroke="#e2f4a2" stroke-width="14" stroke-linecap="round" fill="none">
+    <path d="M54 78 L32 54"/><path d="M66 78 L88 54"/>
+  </g>
+  <path d="M44 72 H76 C76 86 82 97 90 108 H30 C38 97 44 86 44 72 Z" stroke="#e2f4a2" stroke-width="4" stroke-linejoin="round"/>
+</g></svg><figcaption>16 px</figcaption></figure>
+</section>
+<section class="colors">
+<div class="sw" style="background:#053233;color:#f8ffe1"><b>Midnight Green</b><span>#053233</span><em>Primary · backgrounds, text</em></div>
+<div class="sw" style="background:#e2f4a2;color:#053233"><b>Electric Lime</b><span>#E2F4A2</span><em>Mark, highlights, buttons</em></div>
+<div class="sw" style="background:#f8ffe1;color:#053233"><b>Soft Lime</b><span>#F8FFE1</span><em>Light backgrounds</em></div>
+<div class="sw" style="background:#e9efff;color:#053233"><b>Pattens Blue</b><span>#E9EFFF</span><em>Cards, info states</em></div>
+<div class="sw" style="background:#7789b7;color:#ffffff"><b>Slate Blue</b><span>#7789B7</span><em>Charts, secondary</em></div>
+</section>
+<section class="card type"><p class="k">Typeface · Outfit</p><div class="big">Aa Bb 123</div>
+<div class="row"><span style="font-weight:600">SemiBold — headings</span><span style="font-weight:500">Medium — labels</span><span style="font-weight:400">Regular — body text</span></div>
+<p style="margin-top:20px;font-size:15px;opacity:.75">Free on Google Fonts. Wordmark is outlined from Outfit SemiBold with tightened spacing and the crown as the i's dot.</p></section>
+<section class="card app"><div class="bar"><svg xmlns="http://www.w3.org/2000/svg" viewBox="-126.81 6.01 336.40 115.68" height="30" ><g transform="translate(-114.55 16.70) scale(0.7859)"><g fill="#e2f4a2">
+  <rect x="12" y="14" width="96" height="26" rx="13"/>
+  <g stroke="#e2f4a2" stroke-width="10" stroke-linecap="round" fill="none">
+    <path d="M57 82 L30 50"/><path d="M57 74 L48 50"/><path d="M63 74 L72 50"/><path d="M63 82 L90 50"/>
+  </g>
+  <path d="M45 72 H75 C75 86 81 97 88 106 H32 C39 97 45 86 45 72 Z" stroke="#e2f4a2" stroke-width="4" stroke-linejoin="round"/>
+</g></g><path d="M51.40 100L38.30 100L38.30 72.30Q38.30 68 35.60 65.30Q32.90 62.60 28.60 62.60Q25.80 62.60 23.60 63.80Q21.40 65 20.15 67.20Q18.90 69.40 18.90 72.30L13.80 69.70Q13.80 64 16.20 59.75Q18.60 55.50 22.85 53.10Q27.10 50.70 32.60 50.70Q38.10 50.70 42.35 53.10Q46.60 55.50 49 59.70Q51.40 63.90 51.40 69.40L51.40 100M18.90 100L5.80 100L5.80 27.70L18.90 27.70L18.90 100M80.20 101Q73.60 101 68.30 97.70Q63 94.40 60 88.70Q57 83 57 75.90Q57 68.70 60 63Q63 57.30 68.30 54Q73.60 50.70 80.20 50.70Q85.40 50.70 89.50 52.80Q93.60 54.90 96.05 58.65Q98.50 62.40 98.70 67.10L98.70 84.50Q98.50 89.30 96.05 93Q93.60 96.70 89.50 98.85Q85.40 101 80.20 101M82.60 88.90Q88.10 88.90 91.50 85.25Q94.90 81.60 94.90 75.80Q94.90 72 93.35 69.05Q91.80 66.10 89.05 64.45Q86.30 62.80 82.60 62.80Q79 62.80 76.25 64.45Q73.50 66.10 71.95 69.05Q70.40 72 70.40 75.80Q70.40 79.70 71.95 82.65Q73.50 85.60 76.25 87.25Q79 88.90 82.60 88.90M107.20 100L94.20 100L94.20 87L96.30 75.20L94.20 63.60L94.20 51.70L107.20 51.70L107.20 100M163.60 100L147.60 100L128.90 75.10L147.50 51.70L162.60 51.70L140.80 78.10L141.30 71.70L163.60 100M129.90 100L116.80 100L116.80 27.70L129.90 27.70L129.90 100M180.70 100L167.60 100L167.60 51.70L180.70 51.70" fill="#f8ffe1"/><rect x="160.40" y="29.49" width="27.51" height="15.72" rx="7.86" fill="#f8ffe1"/></svg><span class="pill">New financing</span></div>
+<div class="kpis"><div class="kpi hl"><small>Active financings</small><div>48</div></div><div class="kpi"><small>Outstanding</small><div>₦62.4m</div></div>
+<div class="kpi"><small>Collected this month</small><div>₦8.1m</div></div><div class="kpi"><small>Overdue</small><div>₦1.2m</div></div></div>
+<p style="padding:0 28px 24px;font-size:13px;opacity:.6">Illustrative figures</p></section>
+<section class="card dont"><p class="k" style="grid-column:span 4;margin:0">Use it well</p>
+<div><div class="t" style="background:#053233"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="80" height="80"><g fill="#e2f4a2">
+  <rect x="12" y="14" width="96" height="26" rx="13"/>
+  <g stroke="#e2f4a2" stroke-width="10" stroke-linecap="round" fill="none">
+    <path d="M57 82 L30 50"/><path d="M57 74 L48 50"/><path d="M63 74 L72 50"/><path d="M63 82 L90 50"/>
+  </g>
+  <path d="M45 72 H75 C75 86 81 97 88 106 H32 C39 97 45 86 45 72 Z" stroke="#e2f4a2" stroke-width="4" stroke-linejoin="round"/>
+</g></svg></div>Lime on Midnight — primary</div>
+<div><div class="t" style="background:#f8ffe1;border:1px solid #0532331a"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="80" height="80"><g fill="#053233">
+  <rect x="12" y="14" width="96" height="26" rx="13"/>
+  <g stroke="#053233" stroke-width="10" stroke-linecap="round" fill="none">
+    <path d="M57 82 L30 50"/><path d="M57 74 L48 50"/><path d="M63 74 L72 50"/><path d="M63 82 L90 50"/>
+  </g>
+  <path d="M45 72 H75 C75 86 81 97 88 106 H32 C39 97 45 86 45 72 Z" stroke="#053233" stroke-width="4" stroke-linejoin="round"/>
+</g></svg></div>Midnight on Soft Lime</div>
+<div><div class="t" style="background:#7789b7"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="80" height="80"><g fill="#f8ffe1">
+  <rect x="12" y="14" width="96" height="26" rx="13"/>
+  <g stroke="#f8ffe1" stroke-width="10" stroke-linecap="round" fill="none">
+    <path d="M57 82 L30 50"/><path d="M57 74 L48 50"/><path d="M63 74 L72 50"/><path d="M63 82 L90 50"/>
+  </g>
+  <path d="M45 72 H75 C75 86 81 97 88 106 H32 C39 97 45 86 45 72 Z" stroke="#f8ffe1" stroke-width="4" stroke-linejoin="round"/>
+</g></svg></div>Soft Lime on Slate — sparingly</div>
+<div><div class="t" style="background:#e2f4a2"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="80" height="80"><g fill="#e9efff">
+  <rect x="12" y="14" width="96" height="26" rx="13"/>
+  <g stroke="#e9efff" stroke-width="10" stroke-linecap="round" fill="none">
+    <path d="M57 82 L30 50"/><path d="M57 74 L48 50"/><path d="M63 74 L72 50"/><path d="M63 82 L90 50"/>
+  </g>
+  <path d="M45 72 H75 C75 86 81 97 88 106 H32 C39 97 45 86 45 72 Z" stroke="#e9efff" stroke-width="4" stroke-linejoin="round"/>
+</g></svg></div>Never low contrast (e.g. blue on lime)</div>
+</section>
+</div></body></html>

@@ -1,0 +1,82 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Financings · Haki</title><style>
+@font-face{font-family:Outfit;src:url(fonts/Outfit-Variable.ttf);font-weight:100 900}
+@font-face{font-family:Manrope;src:url(fonts/Manrope-Variable.ttf);font-weight:200 800}
+:root{--mid:#053233;--soft:#f8ffe1;--lime:#e2f4a2;--pat:#e9efff;--slate:#7789b7;
+--ink:#0d1f20;--ink2:#4b5d5e;--ink3:#7d8c8d;--line:#e4e9e6;--bg:#f6f8f3}
+*{box-sizing:border-box}
+body{margin:0;font-family:Manrope,system-ui;color:var(--ink);font-size:14px;background:var(--bg);font-feature-settings:"tnum"}
+h1,h2,h3,.disp{font-family:Outfit;font-weight:600;letter-spacing:-.01em;margin:0}
+.num{font-variant-numeric:tabular-nums}
+.pill{display:inline-flex;align-items:center;gap:6px;padding:3px 10px 3px 8px;border-radius:99px;font-size:12px;font-weight:600;white-space:nowrap}
+.pill i{font-style:normal;font-size:11px}
+.btn{display:inline-flex;align-items:center;gap:8px;height:40px;padding:0 18px;border-radius:10px;font:600 14px Manrope;border:1px solid var(--line);background:#fff;color:var(--ink)}
+.btn.pri{background:var(--mid);color:var(--soft);border-color:var(--mid)}
+.btn.lime{background:var(--lime);color:var(--mid);border-color:var(--lime)}
+.card{background:#fff;border:1px solid var(--line);border-radius:16px}
+.muted{color:var(--ink3)} .ink2{color:var(--ink2)}
+label{display:block;font-size:13px;font-weight:600;margin-bottom:6px;color:var(--ink)}
+.field{height:46px;border:1px solid #d5dcd8;border-radius:10px;padding:0 14px;display:flex;align-items:center;background:#fff;font-size:15px;justify-content:space-between}
+.hint{font-size:12px;color:var(--ink3);margin-top:6px}
+table{border-collapse:collapse;width:100%}
+th{font-size:12px;font-weight:600;color:var(--ink3);text-align:left;padding:10px 16px;border-bottom:1px solid var(--line);white-space:nowrap}
+td{padding:13px 16px;border-bottom:1px solid var(--line);white-space:nowrap}
+td.r,th.r{text-align:right}
+tr:last-child td{border-bottom:0}
+
+/* staff shell: slim icon rail */
+.shell{display:grid;grid-template-columns:84px 1fr;min-height:100vh}
+.rail{background:var(--mid);display:flex;flex-direction:column;align-items:center;padding:24px 0;gap:10px}
+.rail .mk{margin-bottom:26px}
+.ri{width:46px;height:46px;border-radius:14px;display:grid;place-items:center;color:#8fb0a6;position:relative}
+.ri svg{width:21px;height:21px}
+.ri.on{background:var(--lime);color:var(--mid)}
+.ri .dot{position:absolute;top:9px;right:9px;width:8px;height:8px;border-radius:50%;background:var(--lime);box-shadow:0 0 0 2px var(--mid)}
+.ri.on .dot{background:var(--mid);box-shadow:0 0 0 2px var(--lime)}
+.rail .end{margin-top:auto;display:flex;flex-direction:column;gap:10px;align-items:center}
+.ava{width:38px;height:38px;border-radius:50%;background:var(--slate);color:#fff;display:grid;place-items:center;font-weight:700;font-size:13px}
+.main{padding:30px 44px 56px;min-width:0}
+.top{display:flex;align-items:center;gap:12px;margin-bottom:28px}
+.top h1{font-size:28px}
+.top .sub{color:var(--ink3);margin-top:4px;font-size:14px}
+.top .sp{flex:1}
+.search{width:280px;height:44px;border:1px solid var(--line);background:#fff;border-radius:12px;display:flex;align-items:center;gap:10px;padding:0 14px;color:var(--ink3)}
+.ib{width:44px;height:44px;border-radius:12px;border:1px solid var(--line);background:#fff;display:grid;place-items:center;color:var(--ink2)}
+.ib svg{width:19px;height:19px}
+.seg{display:inline-flex;background:#f0f3ee;border-radius:12px;padding:4px}
+.seg span{padding:8px 14px;border-radius:9px;font-weight:600;font-size:13px;color:var(--ink2)}
+.seg span.on{background:#fff;color:var(--mid);box-shadow:0 1px 3px rgba(5,50,51,.12)}
+
+.chips{display:flex;gap:8px;margin-bottom:16px;align-items:center}
+.chip{padding:8px 14px;border-radius:99px;background:#fff;border:1px solid var(--line);font-weight:600;font-size:13px;color:var(--ink2)}
+.chip b{margin-left:6px;color:var(--ink3);font-weight:600}
+.chip.on{background:var(--mid);color:var(--soft);border-color:var(--mid)}.chip.on b{color:var(--lime)}
+.chip.warn{color:#a83420}
+.filters{display:flex;gap:10px;align-items:center;padding:14px 16px;border-bottom:1px solid var(--line)}
+.dd{height:38px;border:1px solid var(--line);border-radius:9px;padding:0 12px;display:flex;align-items:center;gap:10px;font-size:13px;font-weight:600;color:var(--ink2);background:#fff}
+.tog{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:var(--ink2);margin-left:6px}
+.tog i{width:34px;height:20px;border-radius:99px;background:#d5dcd8;position:relative}.tog i:after{content:"";position:absolute;left:2px;top:2px;width:16px;height:16px;border-radius:50%;background:#fff}
+.ref{font-weight:700;color:var(--mid)}
+tbody tr:hover td{background:#fafcf6}
+tr.sel td{background:#f7fbe9}
+.late{color:#a83420;font-weight:700}
+.pg{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;border-top:1px solid var(--line);font-size:13px;color:var(--ink3)}
+.pg span.p{display:inline-grid;place-items:center;width:32px;height:32px;border-radius:8px;font-weight:700;color:var(--ink2)}.pg span.p.on{background:var(--mid);color:var(--soft)}[data-href]{cursor:pointer}</style></head><body><div class="shell"><aside class="rail">
+<div class="mk"><svg viewBox="0 0 120 120" width="40" height="40"><g fill="#e2f4a2">
+  <rect x="12" y="14" width="96" height="26" rx="13"/>
+  <g stroke="#e2f4a2" stroke-width="10" stroke-linecap="round" fill="none">
+    <path d="M57 82 L30 50"/><path d="M57 74 L48 50"/><path d="M63 74 L72 50"/><path d="M63 82 L90 50"/>
+  </g>
+  <path d="M45 72 H75 C75 86 81 97 88 106 H32 C39 97 45 86 45 72 Z" stroke="#e2f4a2" stroke-width="4" stroke-linejoin="round"/>
+</g></svg></div>
+<div class="ri " data-href="2-dashboard.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7.5" height="9" rx="2"/><rect x="13.5" y="3" width="7.5" height="5.5" rx="2"/><rect x="13.5" y="11.5" width="7.5" height="9.5" rx="2"/><rect x="3" y="15" width="7.5" height="6" rx="2"/></svg></div>
+<div class="ri on" data-href="3-financings.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M3 10h18M7 15h4"/></svg><span class="dot"></span></div>
+<div class="end"><div class="ri"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg></div><div class="ri"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 4h3a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-3M10 17l5-5-5-5M15 12H4"/></svg></div><div class="ava" style="margin-top:8px">AO</div></div>
+</aside><main class="main">
+<div class="top"><h1>Financings</h1><span class="sp"></span><div class="search">⌕ Search by name, reference or phone</div><span class="btn">⤓ Export</span></div>
+<div class="chips"><span class="chip on">All<b>79</b></span><span class="chip">Applications<b>13</b></span><span class="chip">Active<b>38</b></span><span class="chip warn">Overdue<b>5</b></span><span class="chip">Completed<b>21</b></span><span class="chip">Declined<b>7</b></span></div>
+<div class="card" style="overflow:hidden">
+<div class="filters"><span class="dd">Asset type: All ▾</span><span class="dd">Applied: 1 May – 24 Oct 2026 ▾</span><span class="tog"><i></i>Overdue only</span><span style="flex:1"></span><span class="muted" style="font-size:13px">Showing 12 of 79</span></div>
+<table><thead><tr><th>Reference</th><th>Borrower</th><th>Asset</th><th class="r">Financed (cost)</th><th>Status</th><th>Next due</th><th class="r">Balance</th><th class="r">Days overdue</th></tr></thead>
+<tbody><tr data-href="4-financing-detail.html" class=""><td class="ref">MF-2026-0042</td><td><b>Zainab Abdullahi</b></td><td class="ink2">Grinding mill</td><td class="r num">₦1,450,000</td><td><span class="pill" style="background:#f1f3f5;color:#4a5560"><i>+</i>New application</span></td><td class="">—</td><td class="r num"><span class="muted">—</span></td><td class="r"><span class="muted">—</span></td></tr><tr data-href="4-financing-detail.html" class=""><td class="ref">MF-2026-0041</td><td><b>Ibrahim Musa</b></td><td class="ink2">Honda Accord 2017</td><td class="r num">₦9,800,000</td><td><span class="pill" style="background:#e9efff;color:#45568a"><i>◔</i>Under review</span></td><td class="">—</td><td class="r num"><span class="muted">—</span></td><td class="r"><span class="muted">—</span></td></tr><tr data-href="4-financing-detail.html" class=""><td class="ref">MF-2026-0039</td><td><b>Ngozi Eze</b></td><td class="ink2">POS terminals ×4</td><td class="r num">₦620,000</td><td><span class="pill" style="background:#efeaff;color:#5a45a8"><i>✉</i>Agreement sent</span></td><td class="">—</td><td class="r num"><span class="muted">—</span></td><td class="r"><span class="muted">—</span></td></tr><tr data-href="4-financing-detail.html" class=""><td class="ref">MF-2026-0035</td><td><b>Tunde Adeyemi</b></td><td class="ink2">HP EliteBook laptop</td><td class="r num">₦870,000</td><td><span class="pill" style="background:#e3f3ec;color:#0b6b4f"><i>●</i>Active</span></td><td class="">30 Oct</td><td class="r num">₦652,500</td><td class="r"><span class="muted">—</span></td></tr><tr data-href="4-financing-detail.html" class="sel"><td class="ref">MF-2026-0031</td><td><b>Chinedu Okafor</b></td><td class="ink2">Toyota Corolla 2019</td><td class="r num">₦8,000,000</td><td><span class="pill" style="background:#fde7e2;color:#a83420"><i>!</i>Overdue</span></td><td class="late">28 Sep</td><td class="r num">₦3,850,000</td><td class="r"><span class="late">26</span></td></tr><tr data-href="4-financing-detail.html" class=""><td class="ref">MF-2026-0029</td><td><b>Kemi Balogun</b></td><td class="ink2">iPhone 15 Pro</td><td class="r num">₦1,280,000</td><td><span class="pill" style="background:#fde7e2;color:#a83420"><i>!</i>Overdue</span></td><td class="late">19 Oct</td><td class="r num">₦832,000</td><td class="r"><span class="late">5</span></td></tr><tr data-href="4-financing-detail.html" class=""><td class="ref">MF-2026-0027</td><td><b>Halima Sani</b></td><td class="ink2">Industrial sewing machines</td><td class="r num">₦1,050,000</td><td><span class="pill" style="background:#e3f3ec;color:#0b6b4f"><i>●</i>Active</span></td><td class="">28 Oct</td><td class="r num">₦528,000</td><td class="r"><span class="muted">—</span></td></tr><tr data-href="4-financing-detail.html" class=""><td class="ref">MF-2026-0022</td><td><b>Musa Danjuma</b></td><td class="ink2">Chest freezer</td><td class="r num">₦760,000</td><td><span class="pill" style="background:#fde7e2;color:#a83420"><i>!</i>Overdue</span></td><td class="late">12 Oct</td><td class="r num">₦380,000</td><td class="r"><span class="late">12</span></td></tr><tr data-href="4-financing-detail.html" class=""><td class="ref">MF-2026-0018</td><td><b>Aisha Bello</b></td><td class="ink2">7.5kVA generator</td><td class="r num">₦1,740,000</td><td><span class="pill" style="background:#e3f3ec;color:#0b6b4f"><i>●</i>Active</span></td><td class="">26 Oct</td><td class="r num">₦870,000</td><td class="r"><span class="muted">—</span></td></tr><tr data-href="4-financing-detail.html" class=""><td class="ref">MF-2026-0014</td><td><b>Usman Garba</b></td><td class="ink2">Toyota Hiace bus</td><td class="r num">₦14,500,000</td><td><span class="pill" style="background:#e3f3ec;color:#0b6b4f"><i>●</i>Active</span></td><td class="">05 Nov</td><td class="r num">₦9,960,000</td><td class="r"><span class="muted">—</span></td></tr><tr data-href="4-financing-detail.html" class=""><td class="ref">MF-2026-0011</td><td><b>Fatima Yusuf</b></td><td class="ink2">Solar inverter kit</td><td class="r num">₦2,300,000</td><td><span class="pill" style="background:#eef0f2;color:#3d4650"><i>✓</i>Completed</span></td><td class="">—</td><td class="r num">₦0</td><td class="r"><span class="muted">—</span></td></tr><tr data-href="4-financing-detail.html" class=""><td class="ref">MF-2026-0009</td><td><b>Emeka Nwosu</b></td><td class="ink2">Tricycle (Keke)</td><td class="r num">₦2,600,000</td><td><span class="pill" style="background:#fde7e2;color:#a83420"><i>!</i>Overdue</span></td><td class="late">13 Sep</td><td class="r num">₦1,240,000</td><td class="r"><span class="late">41</span></td></tr></tbody></table>
+<div class="pg"><span>Rows per page: 12 ▾</span><span><span class="p on">1</span><span class="p">2</span><span class="p">3</span><span class="p">…</span><span class="p">7</span></span></div>
+</div></main></div><script>document.addEventListener('click',e=>{const a=e.target.closest('[data-href]');if(a)location.href=a.dataset.href})</script></body></html>

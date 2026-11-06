@@ -1,0 +1,121 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Apply · Haki</title><style>
+@font-face{font-family:Outfit;src:url(fonts/Outfit-Variable.ttf);font-weight:100 900}
+@font-face{font-family:Manrope;src:url(fonts/Manrope-Variable.ttf);font-weight:200 800}
+:root{--mid:#053233;--soft:#f8ffe1;--lime:#e2f4a2;--pat:#e9efff;--slate:#7789b7;
+--ink:#0d1f20;--ink2:#4b5d5e;--ink3:#7d8c8d;--line:#e4e9e6;--bg:#f6f8f3}
+*{box-sizing:border-box}
+body{margin:0;font-family:Manrope,system-ui;color:var(--ink);font-size:14px;background:var(--bg);font-feature-settings:"tnum"}
+h1,h2,h3,.disp{font-family:Outfit;font-weight:600;letter-spacing:-.01em;margin:0}
+.num{font-variant-numeric:tabular-nums}
+.pill{display:inline-flex;align-items:center;gap:6px;padding:3px 10px 3px 8px;border-radius:99px;font-size:12px;font-weight:600;white-space:nowrap}
+.pill i{font-style:normal;font-size:11px}
+.btn{display:inline-flex;align-items:center;gap:8px;height:40px;padding:0 18px;border-radius:10px;font:600 14px Manrope;border:1px solid var(--line);background:#fff;color:var(--ink)}
+.btn.pri{background:var(--mid);color:var(--soft);border-color:var(--mid)}
+.btn.lime{background:var(--lime);color:var(--mid);border-color:var(--lime)}
+.card{background:#fff;border:1px solid var(--line);border-radius:16px}
+.muted{color:var(--ink3)} .ink2{color:var(--ink2)}
+label{display:block;font-size:13px;font-weight:600;margin-bottom:6px;color:var(--ink)}
+.field{height:46px;border:1px solid #d5dcd8;border-radius:10px;padding:0 14px;display:flex;align-items:center;background:#fff;font-size:15px;justify-content:space-between}
+.hint{font-size:12px;color:var(--ink3);margin-top:6px}
+table{border-collapse:collapse;width:100%}
+th{font-size:12px;font-weight:600;color:var(--ink3);text-align:left;padding:10px 16px;border-bottom:1px solid var(--line);white-space:nowrap}
+td{padding:13px 16px;border-bottom:1px solid var(--line);white-space:nowrap}
+td.r,th.r{text-align:right}
+tr:last-child td{border-bottom:0}
+
+/* staff shell: slim icon rail */
+.shell{display:grid;grid-template-columns:84px 1fr;min-height:100vh}
+.rail{background:var(--mid);display:flex;flex-direction:column;align-items:center;padding:24px 0;gap:10px}
+.rail .mk{margin-bottom:26px}
+.ri{width:46px;height:46px;border-radius:14px;display:grid;place-items:center;color:#8fb0a6;position:relative}
+.ri svg{width:21px;height:21px}
+.ri.on{background:var(--lime);color:var(--mid)}
+.ri .dot{position:absolute;top:9px;right:9px;width:8px;height:8px;border-radius:50%;background:var(--lime);box-shadow:0 0 0 2px var(--mid)}
+.ri.on .dot{background:var(--mid);box-shadow:0 0 0 2px var(--lime)}
+.rail .end{margin-top:auto;display:flex;flex-direction:column;gap:10px;align-items:center}
+.ava{width:38px;height:38px;border-radius:50%;background:var(--slate);color:#fff;display:grid;place-items:center;font-weight:700;font-size:13px}
+.main{padding:30px 44px 56px;min-width:0}
+.top{display:flex;align-items:center;gap:12px;margin-bottom:28px}
+.top h1{font-size:28px}
+.top .sub{color:var(--ink3);margin-top:4px;font-size:14px}
+.top .sp{flex:1}
+.search{width:280px;height:44px;border:1px solid var(--line);background:#fff;border-radius:12px;display:flex;align-items:center;gap:10px;padding:0 14px;color:var(--ink3)}
+.ib{width:44px;height:44px;border-radius:12px;border:1px solid var(--line);background:#fff;display:grid;place-items:center;color:var(--ink2)}
+.ib svg{width:19px;height:19px}
+.seg{display:inline-flex;background:#f0f3ee;border-radius:12px;padding:4px}
+.seg span{padding:8px 14px;border-radius:9px;font-weight:600;font-size:13px;color:var(--ink2)}
+.seg span.on{background:#fff;color:var(--mid);box-shadow:0 1px 3px rgba(5,50,51,.12)}
+
+.apply{display:grid;grid-template-columns:420px 1fr;min-height:100vh}
+.panel{background:var(--mid);color:var(--soft);padding:40px 44px;display:flex;flex-direction:column}
+.panel h1{font-size:40px;line-height:1.08;margin:56px 0 14px;color:var(--soft)}
+.panel p.lead{color:#b9cfc6;font-size:15px;line-height:1.55;margin:0 0 40px}
+.steps{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px}
+.steps li{display:flex;align-items:center;gap:14px;padding:10px 0;color:#7fa39a;font-weight:600}
+.steps li .n{width:30px;height:30px;border-radius:50%;border:1.5px solid #2c6264;display:grid;place-items:center;font-size:13px}
+.steps li.done{color:#cfe0d8}.steps li.done .n{background:#0f4a4b;border-color:#0f4a4b;color:var(--lime)}
+.steps li.on{color:var(--soft)}.steps li.on .n{background:var(--lime);border-color:var(--lime);color:var(--mid)}
+.how{margin-top:auto;background:#0b3f40;border-radius:16px;padding:20px 22px}
+.how h3{font-size:15px;color:var(--lime);margin-bottom:12px}
+.how ol{margin:0;padding-left:18px;color:#cfe0d8;line-height:1.75;font-size:13.5px}
+.formside{padding:40px 72px;display:flex;flex-direction:column;max-width:860px}
+.prog{display:flex;align-items:center;gap:16px;font-size:13px;color:var(--ink3);font-weight:600}
+.bar{flex:1;height:6px;background:#e3e9e4;border-radius:99px;overflow:hidden}.bar i{display:block;height:100%;width:80%;background:var(--mid);border-radius:99px}
+.formside h2{font-size:32px;margin:36px 0 8px}
+.recap{display:flex;align-items:center;gap:14px;padding:14px 16px;border-radius:14px;background:var(--pat);margin:24px 0 28px}
+.recap .ic{width:42px;height:42px;border-radius:10px;background:#fff;display:grid;place-items:center}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.tenor{display:flex;gap:8px}.tenor span{flex:1;height:46px;border:1px solid #d5dcd8;border-radius:10px;display:grid;place-items:center;font-weight:600;background:#fff}
+.tenor span.on{background:var(--mid);color:var(--soft);border-color:var(--mid)}
+.est{margin-top:28px;background:var(--lime);border-radius:18px;padding:24px 26px;display:grid;grid-template-columns:1fr auto;gap:8px 24px;align-items:end}
+.est .big{font-family:Outfit;font-weight:600;font-size:44px;color:var(--mid);letter-spacing:-.02em;line-height:1}
+.est .big small{font-size:18px;font-weight:500}
+.est dl{margin:0;display:grid;grid-template-columns:auto auto;gap:4px 18px;font-size:13px;color:#2d4f45}
+.est dd{margin:0;text-align:right;font-weight:700;color:var(--mid)}
+.est p{grid-column:1/-1;margin:10px 0 0;font-size:12.5px;color:#3d5c52}
+.actions{display:flex;align-items:center;gap:12px;margin-top:36px;padding-top:24px;border-top:1px solid var(--line)}
+.saved{margin-right:auto;font-size:12.5px;color:var(--ink3);display:flex;align-items:center;gap:6px}
+.mtop{display:none}
+@media(max-width:700px){
+ .apply{grid-template-columns:1fr}.panel{display:none}
+ .mtop{display:flex;align-items:center;justify-content:space-between;background:var(--mid);padding:16px 20px;color:#b9cfc6;font-size:13px;font-weight:600}
+ .formside{padding:24px 20px}.formside h2{font-size:26px;margin-top:22px}
+ .grid2{grid-template-columns:1fr;gap:18px}.tenor{flex-wrap:wrap}.tenor span{flex:0 0 calc(33.3% - 6px)}
+ .est{grid-template-columns:1fr}.est .big{font-size:38px}
+ .actions{flex-wrap:wrap}.saved{width:100%;margin-bottom:6px}.actions .btn{flex:1;justify-content:center}
+}[data-href]{cursor:pointer}</style></head><body><div class="mtop"><svg xmlns="http://www.w3.org/2000/svg" viewBox="-126.81 6.01 336.40 115.68" height="26"><g transform="translate(-114.55 16.70) scale(0.7859)"><g fill="#e2f4a2">
+  <rect x="12" y="14" width="96" height="26" rx="13"/>
+  <g stroke="#e2f4a2" stroke-width="10" stroke-linecap="round" fill="none">
+    <path d="M57 82 L30 50"/><path d="M57 74 L48 50"/><path d="M63 74 L72 50"/><path d="M63 82 L90 50"/>
+  </g>
+  <path d="M45 72 H75 C75 86 81 97 88 106 H32 C39 97 45 86 45 72 Z" stroke="#e2f4a2" stroke-width="4" stroke-linejoin="round"/>
+</g></g><path d="M51.40 100L38.30 100L38.30 72.30Q38.30 68 35.60 65.30Q32.90 62.60 28.60 62.60Q25.80 62.60 23.60 63.80Q21.40 65 20.15 67.20Q18.90 69.40 18.90 72.30L13.80 69.70Q13.80 64 16.20 59.75Q18.60 55.50 22.85 53.10Q27.10 50.70 32.60 50.70Q38.10 50.70 42.35 53.10Q46.60 55.50 49 59.70Q51.40 63.90 51.40 69.40L51.40 100M18.90 100L5.80 100L5.80 27.70L18.90 27.70L18.90 100M80.20 101Q73.60 101 68.30 97.70Q63 94.40 60 88.70Q57 83 57 75.90Q57 68.70 60 63Q63 57.30 68.30 54Q73.60 50.70 80.20 50.70Q85.40 50.70 89.50 52.80Q93.60 54.90 96.05 58.65Q98.50 62.40 98.70 67.10L98.70 84.50Q98.50 89.30 96.05 93Q93.60 96.70 89.50 98.85Q85.40 101 80.20 101M82.60 88.90Q88.10 88.90 91.50 85.25Q94.90 81.60 94.90 75.80Q94.90 72 93.35 69.05Q91.80 66.10 89.05 64.45Q86.30 62.80 82.60 62.80Q79 62.80 76.25 64.45Q73.50 66.10 71.95 69.05Q70.40 72 70.40 75.80Q70.40 79.70 71.95 82.65Q73.50 85.60 76.25 87.25Q79 88.90 82.60 88.90M107.20 100L94.20 100L94.20 87L96.30 75.20L94.20 63.60L94.20 51.70L107.20 51.70L107.20 100M163.60 100L147.60 100L128.90 75.10L147.50 51.70L162.60 51.70L140.80 78.10L141.30 71.70L163.60 100M129.90 100L116.80 100L116.80 27.70L129.90 27.70L129.90 100M180.70 100L167.60 100L167.60 51.70L180.70 51.70" fill="#f8ffe1"/><rect x="160.40" y="29.49" width="27.51" height="15.72" rx="7.86" fill="#f8ffe1"/></svg>
+<span>Need help? Call us</span></div><div class="apply">
+<section class="panel"><svg xmlns="http://www.w3.org/2000/svg" viewBox="-126.81 6.01 336.40 115.68" height="40"><g transform="translate(-114.55 16.70) scale(0.7859)"><g fill="#e2f4a2">
+  <rect x="12" y="14" width="96" height="26" rx="13"/>
+  <g stroke="#e2f4a2" stroke-width="10" stroke-linecap="round" fill="none">
+    <path d="M57 82 L30 50"/><path d="M57 74 L48 50"/><path d="M63 74 L72 50"/><path d="M63 82 L90 50"/>
+  </g>
+  <path d="M45 72 H75 C75 86 81 97 88 106 H32 C39 97 45 86 45 72 Z" stroke="#e2f4a2" stroke-width="4" stroke-linejoin="round"/>
+</g></g><path d="M51.40 100L38.30 100L38.30 72.30Q38.30 68 35.60 65.30Q32.90 62.60 28.60 62.60Q25.80 62.60 23.60 63.80Q21.40 65 20.15 67.20Q18.90 69.40 18.90 72.30L13.80 69.70Q13.80 64 16.20 59.75Q18.60 55.50 22.85 53.10Q27.10 50.70 32.60 50.70Q38.10 50.70 42.35 53.10Q46.60 55.50 49 59.70Q51.40 63.90 51.40 69.40L51.40 100M18.90 100L5.80 100L5.80 27.70L18.90 27.70L18.90 100M80.20 101Q73.60 101 68.30 97.70Q63 94.40 60 88.70Q57 83 57 75.90Q57 68.70 60 63Q63 57.30 68.30 54Q73.60 50.70 80.20 50.70Q85.40 50.70 89.50 52.80Q93.60 54.90 96.05 58.65Q98.50 62.40 98.70 67.10L98.70 84.50Q98.50 89.30 96.05 93Q93.60 96.70 89.50 98.85Q85.40 101 80.20 101M82.60 88.90Q88.10 88.90 91.50 85.25Q94.90 81.60 94.90 75.80Q94.90 72 93.35 69.05Q91.80 66.10 89.05 64.45Q86.30 62.80 82.60 62.80Q79 62.80 76.25 64.45Q73.50 66.10 71.95 69.05Q70.40 72 70.40 75.80Q70.40 79.70 71.95 82.65Q73.50 85.60 76.25 87.25Q79 88.90 82.60 88.90M107.20 100L94.20 100L94.20 87L96.30 75.20L94.20 63.60L94.20 51.70L107.20 51.70L107.20 100M163.60 100L147.60 100L128.90 75.10L147.50 51.70L162.60 51.70L140.80 78.10L141.30 71.70L163.60 100M129.90 100L116.80 100L116.80 27.70L129.90 27.70L129.90 100M180.70 100L167.60 100L167.60 51.70L180.70 51.70" fill="#f8ffe1"/><rect x="160.40" y="29.49" width="27.51" height="15.72" rx="7.86" fill="#f8ffe1"/></svg>
+
+<h1>Finance what you need, at a price that never grows.</h1>
+<p class="lead">We buy the asset for you, then sell it to you at one fixed price you agree to upfront. No interest, ever.</p>
+<ol class="steps"><li class="done"><span class="n">✓</span>Personal details</li><li class="done"><span class="n">✓</span>Work and income</li><li class="done"><span class="n">✓</span>Asset to finance</li><li class="on"><span class="n">4</span>Payment plan</li><li class=""><span class="n">5</span>Guarantor and review</li></ol>
+<div class="how"><h3>How it works</h3><ol><li>Tell us what you want to buy and from whom</li><li>We check it and buy it from the vendor</li><li>You pay us back in fixed monthly instalments</li></ol></div>
+</section>
+<section class="formside">
+<div class="prog">Step 4 of 5<div class="bar"><i></i></div>80%</div>
+<h2>Your payment plan</h2>
+<p class="ink2" style="margin:0;font-size:15px">Choose what you can put down and how long you'd like to pay.</p>
+<div class="recap"><div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#053233" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 16H3v-4l2-5h14l2 5v4h-2"/><circle cx="7.5" cy="16.5" r="2"/><circle cx="16.5" cy="16.5" r="2"/><path d="M9.5 16.5h5M3 12h18"/></svg></div><div><div style="font-weight:700">2019 Toyota Corolla LE</div><div class="muted" style="font-size:13px">From Prestige Motors, Ikeja · Quoted at ₦8,000,000</div></div><span style="margin-left:auto;font-weight:600;color:#45568a;font-size:13px">Edit</span></div>
+<div class="grid2">
+<div><label>Down payment</label><div class="field"><span>₦ 2,000,000</span><span class="muted" style="font-size:13px">25%</span></div><div class="hint">At least 20% of the quoted price</div></div>
+<div><label>Preferred payment day</label><div class="field"><span>28th of each month</span><span class="muted">▾</span></div><div class="hint">Pick a day just after you get paid</div></div>
+</div>
+<div style="margin-top:22px"><label>How many months?</label><div class="tenor"><span class="">3</span><span class="">6</span><span class="">9</span><span class="on">12</span><span class="">18</span><span class="">24</span></div></div>
+<div class="est"><div><div style="font-size:13px;font-weight:600;color:#2d4f45;margin-bottom:8px">Estimated monthly instalment</div><div class="big">₦600,000<small> / month</small></div></div>
+<dl><dt>Asset price</dt><dd>₦8,000,000</dd><dt>Our profit (fixed)</dt><dd>₦1,200,000</dd><dt>Total you pay</dt><dd>₦9,200,000</dd></dl>
+<p>This is an estimate. We'll confirm the exact price after we verify the vendor's quote, and it won't change after you accept.</p></div>
+<div class="actions"><span class="saved">✓ Progress saved on this device</span><span class="btn">Back</span><span class="btn pri" data-href="6-application-sent.html">Continue →</span></div>
+</section></div><script>document.addEventListener('click',e=>{const a=e.target.closest('[data-href]');if(a)location.href=a.dataset.href})</script></body></html>

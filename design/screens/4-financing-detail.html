@@ -1,0 +1,170 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>MF-2026-0031 · Haki</title><style>
+@font-face{font-family:Outfit;src:url(fonts/Outfit-Variable.ttf);font-weight:100 900}
+@font-face{font-family:Manrope;src:url(fonts/Manrope-Variable.ttf);font-weight:200 800}
+:root{--mid:#053233;--soft:#f8ffe1;--lime:#e2f4a2;--pat:#e9efff;--slate:#7789b7;
+--ink:#0d1f20;--ink2:#4b5d5e;--ink3:#7d8c8d;--line:#e4e9e6;--bg:#f6f8f3}
+*{box-sizing:border-box}
+body{margin:0;font-family:Manrope,system-ui;color:var(--ink);font-size:14px;background:var(--bg);font-feature-settings:"tnum"}
+h1,h2,h3,.disp{font-family:Outfit;font-weight:600;letter-spacing:-.01em;margin:0}
+.num{font-variant-numeric:tabular-nums}
+.pill{display:inline-flex;align-items:center;gap:6px;padding:3px 10px 3px 8px;border-radius:99px;font-size:12px;font-weight:600;white-space:nowrap}
+.pill i{font-style:normal;font-size:11px}
+.btn{display:inline-flex;align-items:center;gap:8px;height:40px;padding:0 18px;border-radius:10px;font:600 14px Manrope;border:1px solid var(--line);background:#fff;color:var(--ink)}
+.btn.pri{background:var(--mid);color:var(--soft);border-color:var(--mid)}
+.btn.lime{background:var(--lime);color:var(--mid);border-color:var(--lime)}
+.card{background:#fff;border:1px solid var(--line);border-radius:16px}
+.muted{color:var(--ink3)} .ink2{color:var(--ink2)}
+label{display:block;font-size:13px;font-weight:600;margin-bottom:6px;color:var(--ink)}
+.field{height:46px;border:1px solid #d5dcd8;border-radius:10px;padding:0 14px;display:flex;align-items:center;background:#fff;font-size:15px;justify-content:space-between}
+.hint{font-size:12px;color:var(--ink3);margin-top:6px}
+table{border-collapse:collapse;width:100%}
+th{font-size:12px;font-weight:600;color:var(--ink3);text-align:left;padding:10px 16px;border-bottom:1px solid var(--line);white-space:nowrap}
+td{padding:13px 16px;border-bottom:1px solid var(--line);white-space:nowrap}
+td.r,th.r{text-align:right}
+tr:last-child td{border-bottom:0}
+
+/* staff shell: slim icon rail */
+.shell{display:grid;grid-template-columns:84px 1fr;min-height:100vh}
+.rail{background:var(--mid);display:flex;flex-direction:column;align-items:center;padding:24px 0;gap:10px}
+.rail .mk{margin-bottom:26px}
+.ri{width:46px;height:46px;border-radius:14px;display:grid;place-items:center;color:#8fb0a6;position:relative}
+.ri svg{width:21px;height:21px}
+.ri.on{background:var(--lime);color:var(--mid)}
+.ri .dot{position:absolute;top:9px;right:9px;width:8px;height:8px;border-radius:50%;background:var(--lime);box-shadow:0 0 0 2px var(--mid)}
+.ri.on .dot{background:var(--mid);box-shadow:0 0 0 2px var(--lime)}
+.rail .end{margin-top:auto;display:flex;flex-direction:column;gap:10px;align-items:center}
+.ava{width:38px;height:38px;border-radius:50%;background:var(--slate);color:#fff;display:grid;place-items:center;font-weight:700;font-size:13px}
+.main{padding:30px 44px 56px;min-width:0}
+.top{display:flex;align-items:center;gap:12px;margin-bottom:28px}
+.top h1{font-size:28px}
+.top .sub{color:var(--ink3);margin-top:4px;font-size:14px}
+.top .sp{flex:1}
+.search{width:280px;height:44px;border:1px solid var(--line);background:#fff;border-radius:12px;display:flex;align-items:center;gap:10px;padding:0 14px;color:var(--ink3)}
+.ib{width:44px;height:44px;border-radius:12px;border:1px solid var(--line);background:#fff;display:grid;place-items:center;color:var(--ink2)}
+.ib svg{width:19px;height:19px}
+.seg{display:inline-flex;background:#f0f3ee;border-radius:12px;padding:4px}
+.seg span{padding:8px 14px;border-radius:9px;font-weight:600;font-size:13px;color:var(--ink2)}
+.seg span.on{background:#fff;color:var(--mid);box-shadow:0 1px 3px rgba(5,50,51,.12)}
+
+.dgrid{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:24px;align-items:start}
+.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:24px}
+.kpi{padding:22px 24px;border-radius:20px;border:0;box-shadow:0 1px 2px rgba(5,50,51,.04)}
+.kpi .ico{width:42px;height:42px;border-radius:12px;background:var(--pat);color:#45568a;display:grid;place-items:center;margin-bottom:22px}
+.kpi .ico svg{width:20px;height:20px}
+.kpi .v{font-family:Outfit;font-size:32px;font-weight:600;letter-spacing:-.02em}
+.kpi .l{font-size:13.5px;color:var(--ink3);margin-top:6px}
+.kpi .tag{float:right;font-size:12px;font-weight:700}
+.card{border:0;border-radius:20px;box-shadow:0 1px 2px rgba(5,50,51,.04)}
+.card .hd{display:flex;align-items:center;gap:12px;padding:22px 24px 0}
+.card .hd h3{font-size:18px}
+.card .hd .sp{flex:1}
+.ax{font:500 11.5px Manrope;fill:var(--ink3)} .dl{font:700 13px Manrope;fill:var(--ink)}
+.dd{height:38px;border:1px solid var(--line);border-radius:10px;padding:0 12px;display:flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:var(--ink2)}
+.cb{padding:8px 24px 18px}
+.big{display:flex;align-items:baseline;gap:10px;padding:16px 24px 0}
+.big b{font-family:Outfit;font-size:30px;font-weight:600;letter-spacing:-.02em}
+.big span{color:var(--ink3);font-size:13.5px}
+.li{display:flex;align-items:center;gap:14px;padding:14px 0;border-bottom:1px solid #f0f2ef}
+.li:last-child{border:0}
+.li .ini{width:40px;height:40px;border-radius:12px;background:#f1f4ee;display:grid;place-items:center;font-weight:700;font-size:13px;color:var(--mid)}
+.li .ini svg{width:19px;height:19px}
+.li .t{flex:1;min-width:0}.li .t b{display:block;font-weight:700}.li .t small{color:var(--ink3);font-size:12.5px}
+.li .a{text-align:right}.li .a b{display:block}.li .a small{font-size:12px;font-weight:700}
+.dark{background:var(--mid);color:var(--soft);border-radius:22px;padding:26px}
+.dark .k{font-size:13px;color:#9fbcb2;font-weight:600}
+.dark .n{font-family:Outfit;font-size:40px;font-weight:600;margin:6px 0 2px;letter-spacing:-.02em}
+.track{height:10px;border-radius:99px;background:#0f4a4b;margin:22px 0 10px;overflow:hidden}.track i{display:block;height:100%;width:89%;background:var(--lime);border-radius:99px}
+.dark .row2{display:flex;justify-content:space-between;font-size:13px;color:#cfe0d8}
+.dark .btn{width:100%;justify-content:center;margin-top:22px;background:var(--soft);color:var(--mid);border:0;height:46px;border-radius:12px}
+.rcard{padding:22px 24px;margin-top:20px}
+.rcard h3{font-size:18px;display:flex;justify-content:space-between;align-items:baseline}
+.rcard h3 span{font:600 13px Manrope;color:var(--ink3)}
+.late{color:#a83420}
+#tip{position:fixed;pointer-events:none;background:var(--mid);color:var(--soft);font:600 12px Manrope;padding:6px 10px;border-radius:8px;opacity:0;transition:opacity .1s}
+.hit{cursor:pointer}.hit:hover{opacity:.85}
+.crumb{display:inline-flex;align-items:center;gap:6px;font-size:13.5px;color:var(--ink3);font-weight:600;margin-bottom:22px}
+.crumb svg{width:16px;height:16px}
+.dhead{display:flex;align-items:center;gap:18px;margin-bottom:26px}
+.bigava{width:60px;height:60px;border-radius:18px;background:var(--lime);color:var(--mid);display:grid;place-items:center;font:600 22px Outfit}
+.dhead h1{font-size:30px}
+.dhead .meta{color:var(--ink3);margin-top:4px;font-size:14px;display:flex;gap:10px;align-items:center}
+.tabs{display:flex;gap:28px;border-bottom:1px solid var(--line);margin-bottom:28px}
+.tabs span{padding:0 0 14px;font-weight:600;color:var(--ink3);border-bottom:2px solid transparent;margin-bottom:-1px}
+.tabs span.on{color:var(--mid);border-color:var(--mid)}
+.cols{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:24px;align-items:start}
+.hero{padding:28px 30px}
+.hero .k{font-size:13.5px;color:var(--ink3);font-weight:600}
+.hero .n{font-family:Outfit;font-size:46px;font-weight:600;letter-spacing:-.02em;margin:6px 0 0}
+.hero .n small{font:500 15px Manrope;color:var(--ink3);letter-spacing:0;margin-left:8px}
+.pbar{height:10px;border-radius:99px;background:#f0f3ee;margin:24px 0 10px;overflow:hidden}.pbar i{display:block;height:100%;width:58%;background:var(--mid);border-radius:99px}
+.pl{display:flex;justify-content:space-between;font-size:13px;color:var(--ink3)}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);margin-top:26px;padding-top:22px;border-top:1px solid #f0f2ef}
+.facts>div{padding-right:16px}.facts>div+div{padding-left:22px;border-left:1px solid #f0f2ef}
+.facts .k{font-size:12.5px}.facts b{display:block;font-size:17px;margin-top:6px}
+.sched{margin-top:24px;padding:8px 26px 10px}
+.sched .hd{padding:16px 0 6px}
+.in{display:flex;align-items:center;gap:16px;padding:16px 0;border-bottom:1px solid #f0f2ef}
+.in:last-child{border:0}
+.in .c{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;font-weight:700;font-size:13px;background:#f1f4ee;color:var(--ink2)}
+.in .c svg{width:16px;height:16px}
+.in .t{flex:1}.in .t b{display:block}.in .t small{color:var(--ink3);font-size:12.5px}
+.in .a{text-align:right}.in .a b{display:block}.in .a small{font-size:12.5px;font-weight:600}
+.in.fold{color:var(--ink2)}.in.fold .c{background:#e3f3ec;color:#0b6b4f}
+.show{font-size:13px;font-weight:700;color:#45568a}
+.terms{background:var(--mid);color:var(--soft);border-radius:22px;padding:26px}
+.terms .k{font-size:13px;color:#9fbcb2;font-weight:600}
+.terms .n{font-family:Outfit;font-size:34px;font-weight:600;color:var(--lime);margin:6px 0 18px;letter-spacing:-.02em}
+.terms dl{margin:0;display:grid;grid-template-columns:1fr auto;gap:12px;font-size:13.5px}
+.terms dt{color:#b9cfc6}.terms dd{margin:0;text-align:right;font-weight:700}
+.terms .note{margin-top:22px;padding-top:18px;border-top:1px solid #12494a;display:flex;gap:12px;font-size:13px;color:#cfe0d8;line-height:1.5}
+.who2{padding:22px 24px;margin-top:20px}
+.who2 h3{font-size:16px;margin-bottom:6px}
+.who2 .r{display:flex;justify-content:space-between;padding:11px 0;border-bottom:1px solid #f0f2ef;font-size:13.5px}
+.who2 .r:last-child{border:0}.who2 .r span{color:var(--ink3)}
+/* record-payment modal */
+.scrim{position:fixed;inset:0;background:rgba(5,30,31,.45);display:grid;place-items:center}
+.modal{width:480px;background:#fff;border-radius:24px;padding:28px 30px;box-shadow:0 30px 80px -20px rgba(0,0,0,.35)}
+.modal .mh{display:flex;justify-content:space-between;align-items:center;margin-bottom:22px}
+.modal .mh h3{font-size:22px}
+.modal .f{margin-bottom:14px}
+.modal .two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.amt{height:64px;font:600 28px Outfit}
+.applies{background:var(--soft);border-radius:12px;padding:12px 14px;font-size:13px;color:#2d4f45;margin:6px 0 16px;display:flex;gap:10px;align-items:center}
+.applies svg{width:18px;height:18px;flex:none;color:#0b6b4f}
+.up{border:1.5px dashed #c9d3ce;border-radius:12px;padding:16px;text-align:center;font-size:13px;color:var(--ink3);margin-bottom:20px}[data-href]{cursor:pointer}</style></head><body><div class="shell"><aside class="rail">
+<div class="mk"><svg viewBox="0 0 120 120" width="40" height="40"><g fill="#e2f4a2">
+  <rect x="12" y="14" width="96" height="26" rx="13"/>
+  <g stroke="#e2f4a2" stroke-width="10" stroke-linecap="round" fill="none">
+    <path d="M57 82 L30 50"/><path d="M57 74 L48 50"/><path d="M63 74 L72 50"/><path d="M63 82 L90 50"/>
+  </g>
+  <path d="M45 72 H75 C75 86 81 97 88 106 H32 C39 97 45 86 45 72 Z" stroke="#e2f4a2" stroke-width="4" stroke-linejoin="round"/>
+</g></svg></div>
+<div class="ri " data-href="2-dashboard.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7.5" height="9" rx="2"/><rect x="13.5" y="3" width="7.5" height="5.5" rx="2"/><rect x="13.5" y="11.5" width="7.5" height="9.5" rx="2"/><rect x="3" y="15" width="7.5" height="6" rx="2"/></svg></div>
+<div class="ri on" data-href="3-financings.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M3 10h18M7 15h4"/></svg><span class="dot"></span></div>
+<div class="end"><div class="ri"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg></div><div class="ri"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 4h3a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-3M10 17l5-5-5-5M15 12H4"/></svg></div><div class="ava" style="margin-top:8px">AO</div></div>
+</aside><main class="main">
+<div class="crumb" data-href="3-financings.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>Financings</div>
+<div class="dhead"><div class="bigava">CO</div><div><h1>Chinedu Okafor</h1><div class="meta">MF-2026-0031 · 2019 Toyota Corolla LE <span class="pill" style="background:#e3f3ec;color:#0b6b4f"><i>●</i>Active</span></div></div><span style="flex:1"></span><div class="ib"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="12" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/></svg></div><span class="btn pri" data-href="4b-record-payment.html" style="height:44px;border-radius:12px">+ Record payment</span></div>
+<div class="tabs"><span>Summary</span><span>Pricing and approval</span><span class="on">Payment plan</span><span>Payments</span><span>Activity</span></div>
+<div class="cols"><div>
+<div class="card hero"><div class="k">Balance remaining</div><div class="n num">₦3,850,000<small>of ₦9,200,000</small></div>
+<div class="pbar"><i></i></div><div class="pl"><span>₦5,350,000 paid, including the down payment</span><b style="color:var(--ink)">58%</b></div>
+<div class="facts"><div><div class="k muted">Next payment</div><b class="num">₦600,000 · 28 Oct</b></div><div><div class="k muted">Overdue</div><b class="num late">₦250,000</b></div><div><div class="k muted">Instalments left</div><b>7 of 12</b></div></div></div>
+<div class="card sched"><div class="hd"><h3>Instalments</h3><span class="sp"></span><div class="seg"><span class="on">Unpaid</span><span>All</span></div></div>
+<div class="in fold"><div class="c"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div><div class="t"><b>5 instalments paid</b><small>28 Apr – 28 Aug 2026, all on time</small></div><span class="show">Show</span></div>
+<div class="in"><div class="c" style="background:#fde7e2;color:#a83420">6</div><div class="t"><b>28 Sep 2026</b><small>₦350,000 of ₦600,000 paid on 30 Sep</small></div><div class="a"><b class="num">₦250,000 left</b><small class="late">26 days late</small></div></div><div class="in"><div class="c" style="background:#fff2d6;color:#8a5a00">7</div><div class="t"><b>28 Oct 2026</b><small>Next payment</small></div><div class="a"><b class="num">₦600,000</b><small style="color:#8a5a00">Due in 4 days</small></div></div><div class="in"><div class="c">8</div><div class="t"><b>28 Nov 2026</b><small>Upcoming</small></div><div class="a"><b class="num" style="color:var(--ink2);font-weight:600">₦600,000</b></div></div><div class="in"><div class="c">9</div><div class="t"><b>28 Dec 2026</b><small>Upcoming</small></div><div class="a"><b class="num" style="color:var(--ink2);font-weight:600">₦600,000</b></div></div><div class="in"><div class="c">10</div><div class="t"><b>28 Jan 2027</b><small>Upcoming</small></div><div class="a"><b class="num" style="color:var(--ink2);font-weight:600">₦600,000</b></div></div>
+<div class="in" style="justify-content:center;padding:14px 0"><span class="show">Show 2 more</span></div></div>
+</div>
+<aside>
+<div class="terms"><div class="k">Sale price, fixed</div><div class="n num">₦9,200,000</div>
+<dl><dt>Asset cost</dt><dd>₦8,000,000</dd><dt>Profit (15%)</dt><dd>₦1,200,000</dd><dt>Down payment</dt><dd>₦2,000,000</dd><dt>Instalments</dt><dd>12 × ₦600,000</dd></dl>
+<div class="note"><svg viewBox="0 0 120 120" width="22" height="22"><g fill="#e2f4a2">
+  <rect x="12" y="14" width="96" height="26" rx="13"/>
+  <g stroke="#e2f4a2" stroke-width="10" stroke-linecap="round" fill="none">
+    <path d="M57 82 L30 50"/><path d="M57 74 L48 50"/><path d="M63 74 L72 50"/><path d="M63 82 L90 50"/>
+  </g>
+  <path d="M45 72 H75 C75 86 81 97 88 106 H32 C39 97 45 86 45 72 Z" stroke="#e2f4a2" stroke-width="4" stroke-linejoin="round"/>
+</g></svg><span>This price never changes. Late payments add no charges.</span></div></div>
+<div class="card who2"><h3>Contacts</h3>
+<div class="r"><span>Phone</span><b>0803 412 7781</b></div><div class="r"><span>Guarantor</span><b>Ifeoma Okafor (sister)</b></div><div class="r"><span>Vendor</span><b>Prestige Motors, Ikeja</b></div></div>
+</aside></div></main></div><script>document.addEventListener('click',e=>{const a=e.target.closest('[data-href]');if(a)location.href=a.dataset.href})</script></body></html>

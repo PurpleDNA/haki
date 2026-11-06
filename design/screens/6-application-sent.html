@@ -1,0 +1,67 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Application sent · Haki</title><style>
+@font-face{font-family:Outfit;src:url(fonts/Outfit-Variable.ttf);font-weight:100 900}
+@font-face{font-family:Manrope;src:url(fonts/Manrope-Variable.ttf);font-weight:200 800}
+:root{--mid:#053233;--soft:#f8ffe1;--lime:#e2f4a2;--pat:#e9efff;--slate:#7789b7;
+--ink:#0d1f20;--ink2:#4b5d5e;--ink3:#7d8c8d;--line:#e4e9e6;--bg:#f6f8f3}
+*{box-sizing:border-box}
+body{margin:0;font-family:Manrope,system-ui;color:var(--ink);font-size:14px;background:var(--bg);font-feature-settings:"tnum"}
+h1,h2,h3,.disp{font-family:Outfit;font-weight:600;letter-spacing:-.01em;margin:0}
+.num{font-variant-numeric:tabular-nums}
+.pill{display:inline-flex;align-items:center;gap:6px;padding:3px 10px 3px 8px;border-radius:99px;font-size:12px;font-weight:600;white-space:nowrap}
+.pill i{font-style:normal;font-size:11px}
+.btn{display:inline-flex;align-items:center;gap:8px;height:40px;padding:0 18px;border-radius:10px;font:600 14px Manrope;border:1px solid var(--line);background:#fff;color:var(--ink)}
+.btn.pri{background:var(--mid);color:var(--soft);border-color:var(--mid)}
+.btn.lime{background:var(--lime);color:var(--mid);border-color:var(--lime)}
+.card{background:#fff;border:1px solid var(--line);border-radius:16px}
+.muted{color:var(--ink3)} .ink2{color:var(--ink2)}
+label{display:block;font-size:13px;font-weight:600;margin-bottom:6px;color:var(--ink)}
+.field{height:46px;border:1px solid #d5dcd8;border-radius:10px;padding:0 14px;display:flex;align-items:center;background:#fff;font-size:15px;justify-content:space-between}
+.hint{font-size:12px;color:var(--ink3);margin-top:6px}
+table{border-collapse:collapse;width:100%}
+th{font-size:12px;font-weight:600;color:var(--ink3);text-align:left;padding:10px 16px;border-bottom:1px solid var(--line);white-space:nowrap}
+td{padding:13px 16px;border-bottom:1px solid var(--line);white-space:nowrap}
+td.r,th.r{text-align:right}
+tr:last-child td{border-bottom:0}
+
+/* staff shell: slim icon rail */
+.shell{display:grid;grid-template-columns:84px 1fr;min-height:100vh}
+.rail{background:var(--mid);display:flex;flex-direction:column;align-items:center;padding:24px 0;gap:10px}
+.rail .mk{margin-bottom:26px}
+.ri{width:46px;height:46px;border-radius:14px;display:grid;place-items:center;color:#8fb0a6;position:relative}
+.ri svg{width:21px;height:21px}
+.ri.on{background:var(--lime);color:var(--mid)}
+.ri .dot{position:absolute;top:9px;right:9px;width:8px;height:8px;border-radius:50%;background:var(--lime);box-shadow:0 0 0 2px var(--mid)}
+.ri.on .dot{background:var(--mid);box-shadow:0 0 0 2px var(--lime)}
+.rail .end{margin-top:auto;display:flex;flex-direction:column;gap:10px;align-items:center}
+.ava{width:38px;height:38px;border-radius:50%;background:var(--slate);color:#fff;display:grid;place-items:center;font-weight:700;font-size:13px}
+.main{padding:30px 44px 56px;min-width:0}
+.top{display:flex;align-items:center;gap:12px;margin-bottom:28px}
+.top h1{font-size:28px}
+.top .sub{color:var(--ink3);margin-top:4px;font-size:14px}
+.top .sp{flex:1}
+.search{width:280px;height:44px;border:1px solid var(--line);background:#fff;border-radius:12px;display:flex;align-items:center;gap:10px;padding:0 14px;color:var(--ink3)}
+.ib{width:44px;height:44px;border-radius:12px;border:1px solid var(--line);background:#fff;display:grid;place-items:center;color:var(--ink2)}
+.ib svg{width:19px;height:19px}
+.seg{display:inline-flex;background:#f0f3ee;border-radius:12px;padding:4px}
+.seg span{padding:8px 14px;border-radius:9px;font-weight:600;font-size:13px;color:var(--ink2)}
+.seg span.on{background:#fff;color:var(--mid);box-shadow:0 1px 3px rgba(5,50,51,.12)}
+body{background:var(--mid)}.ok{min-height:100vh;display:grid;place-items:center;padding:24px}
+.okc{background:#fff;border-radius:28px;padding:48px 44px;max-width:520px;text-align:center}
+.okc .badge{width:72px;height:72px;border-radius:22px;background:var(--lime);display:grid;place-items:center;margin:0 auto 26px}
+.okc h1{font-size:32px;margin-bottom:12px}.okc p{color:var(--ink2);font-size:15.5px;line-height:1.6;margin:0 0 24px}
+.okc .ref{display:inline-block;background:var(--soft);border-radius:12px;padding:12px 20px;font:600 22px Outfit;color:var(--mid);margin-bottom:26px}
+.okc .top2{margin-bottom:34px;display:flex;justify-content:center}[data-href]{cursor:pointer}</style></head><body><div class="ok"><div><div class="top2"><svg xmlns="http://www.w3.org/2000/svg" viewBox="-126.81 6.01 336.40 115.68" height="34"><g transform="translate(-114.55 16.70) scale(0.7859)"><g fill="#e2f4a2">
+  <rect x="12" y="14" width="96" height="26" rx="13"/>
+  <g stroke="#e2f4a2" stroke-width="10" stroke-linecap="round" fill="none">
+    <path d="M57 82 L30 50"/><path d="M57 74 L48 50"/><path d="M63 74 L72 50"/><path d="M63 82 L90 50"/>
+  </g>
+  <path d="M45 72 H75 C75 86 81 97 88 106 H32 C39 97 45 86 45 72 Z" stroke="#e2f4a2" stroke-width="4" stroke-linejoin="round"/>
+</g></g><path d="M51.40 100L38.30 100L38.30 72.30Q38.30 68 35.60 65.30Q32.90 62.60 28.60 62.60Q25.80 62.60 23.60 63.80Q21.40 65 20.15 67.20Q18.90 69.40 18.90 72.30L13.80 69.70Q13.80 64 16.20 59.75Q18.60 55.50 22.85 53.10Q27.10 50.70 32.60 50.70Q38.10 50.70 42.35 53.10Q46.60 55.50 49 59.70Q51.40 63.90 51.40 69.40L51.40 100M18.90 100L5.80 100L5.80 27.70L18.90 27.70L18.90 100M80.20 101Q73.60 101 68.30 97.70Q63 94.40 60 88.70Q57 83 57 75.90Q57 68.70 60 63Q63 57.30 68.30 54Q73.60 50.70 80.20 50.70Q85.40 50.70 89.50 52.80Q93.60 54.90 96.05 58.65Q98.50 62.40 98.70 67.10L98.70 84.50Q98.50 89.30 96.05 93Q93.60 96.70 89.50 98.85Q85.40 101 80.20 101M82.60 88.90Q88.10 88.90 91.50 85.25Q94.90 81.60 94.90 75.80Q94.90 72 93.35 69.05Q91.80 66.10 89.05 64.45Q86.30 62.80 82.60 62.80Q79 62.80 76.25 64.45Q73.50 66.10 71.95 69.05Q70.40 72 70.40 75.80Q70.40 79.70 71.95 82.65Q73.50 85.60 76.25 87.25Q79 88.90 82.60 88.90M107.20 100L94.20 100L94.20 87L96.30 75.20L94.20 63.60L94.20 51.70L107.20 51.70L107.20 100M163.60 100L147.60 100L128.90 75.10L147.50 51.70L162.60 51.70L140.80 78.10L141.30 71.70L163.60 100M129.90 100L116.80 100L116.80 27.70L129.90 27.70L129.90 100M180.70 100L167.60 100L167.60 51.70L180.70 51.70" fill="#f8ffe1"/><rect x="160.40" y="29.49" width="27.51" height="15.72" rx="7.86" fill="#f8ffe1"/></svg>
+</div><div class="okc">
+<div class="badge"><svg viewBox="0 0 120 120" width="44" height="44"><g fill="#053233">
+  <rect x="12" y="14" width="96" height="26" rx="13"/>
+  <g stroke="#053233" stroke-width="10" stroke-linecap="round" fill="none">
+    <path d="M57 82 L30 50"/><path d="M57 74 L48 50"/><path d="M63 74 L72 50"/><path d="M63 82 L90 50"/>
+  </g>
+  <path d="M45 72 H75 C75 86 81 97 88 106 H32 C39 97 45 86 45 72 Z" stroke="#053233" stroke-width="4" stroke-linejoin="round"/>
+</g></svg></div><h1>Application received</h1><p>Thank you, Chinedu. We'll check the vendor's quote and call you within 2 working days. Keep this reference number.</p><div class="ref">MF-2026-0031</div><br><span class="btn pri" data-href="1-apply.html">Back to start</span></div></div></div><script>document.addEventListener('click',e=>{const a=e.target.closest('[data-href]');if(a)location.href=a.dataset.href})</script></body></html>
